@@ -1,0 +1,5 @@
+- hosts: localhost
+  tasks:
+  - name: debug task
+    ansible.builtin.debug:
+       msg: "Playbook from github"

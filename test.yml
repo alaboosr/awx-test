@@ -1,5 +1,6 @@
-- hosts: localhost
+- name: Test KVM access
+  hosts: kvm_host
+  become: yes
   tasks:
-  - name: debug task
-    ansible.builtin.debug:
-       msg: "Playbook from github"
+    - name: Who am I
+      command: whoami

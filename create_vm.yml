@@ -1,0 +1,17 @@
+- name: Create VM on KVM
+  hosts: kvm_host
+  become: true
+  tasks:
+    - name: Create VM
+      command: >
+        virt-install
+        --name web1
+        --ram 2048
+        --vcpus 2
+        --disk path=/var/lib/libvirt/images/web1.qcow2,size=10
+        --os-variant rocky9
+        --import
+        --network network=default
+        --graphics none
+        --noautoconsole
+        --cloud-init user-data=user-data,meta-data=meta-data

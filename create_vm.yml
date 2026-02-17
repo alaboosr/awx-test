@@ -1,5 +1,5 @@
 - name: Create VM on KVM
-  hosts: kvm_host
+  hosts: 192.168.2.10
   become: true
   tasks:
     - name: Create VM

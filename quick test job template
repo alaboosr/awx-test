@@ -1,0 +1,6 @@
+- name: Test KVM access
+  hosts: kvm_host
+  become: yes
+  tasks:
+    - name: Who am I
+      command: whoami
